@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - eKitchen</title>
+    <meta name="description" content="eKitchen privacy policy. How we handle your data.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,90 +15,223 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             color: #1a1a1a;
-            background: #fafafa;
-            line-height: 1.7;
+            background: #fff;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 0 24px;
+        /* ---- NAV ---- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         }
 
-        header {
-            padding: 48px 0 0;
+        .nav-logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #e85d3a;
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            margin-left: 32px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #e85d3a;
+        }
+
+        /* ---- HEADER ---- */
+        .page-header {
+            padding: 140px 24px 60px;
+            background: #f8f8f8;
             text-align: center;
         }
 
-        .logo {
-            font-size: 32px;
+        .page-header h1 {
+            font-size: 44px;
             font-weight: 700;
-            color: #e85d3a;
-            letter-spacing: -0.5px;
-        }
-
-        .logo a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .content {
-            padding: 48px 0 80px;
-        }
-
-        h1 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-
-        .last-updated {
-            font-size: 14px;
-            color: #999;
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-top: 36px;
+            letter-spacing: -1.5px;
             margin-bottom: 12px;
         }
 
-        p {
+        .page-header .last-updated {
+            font-size: 15px;
+            color: #999;
+        }
+
+        .page-header .tldr {
+            max-width: 520px;
+            margin: 24px auto 0;
+            padding: 20px 24px;
+            background: #fff;
+            border-radius: 14px;
             font-size: 16px;
-            color: #333;
+            color: #555;
+            line-height: 1.65;
+        }
+
+        /* ---- CONTENT ---- */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px 100px;
+        }
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.4px;
             margin-bottom: 16px;
+            color: #1a1a1a;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f0f0;
         }
 
-        ul {
-            margin: 0 0 16px 24px;
-            color: #333;
-        }
-
-        li {
+        .section p {
             font-size: 16px;
-            margin-bottom: 6px;
+            color: #444;
+            margin-bottom: 14px;
+            line-height: 1.75;
         }
 
-        a {
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section strong {
+            color: #1a1a1a;
+        }
+
+        .section a {
             color: #e85d3a;
             text-decoration: none;
+            font-weight: 500;
         }
 
-        a:hover {
+        .section a:hover {
             text-decoration: underline;
         }
 
+        /* Card-style lists */
+        .info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .info-card {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 18px 22px;
+            font-size: 16px;
+            color: #444;
+            line-height: 1.65;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .info-card .card-icon {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .info-card .card-icon.green { background: #eefef3; }
+        .info-card .card-icon.blue { background: #eef3fe; }
+        .info-card .card-icon.orange { background: #fef3ee; }
+        .info-card .card-icon.red { background: #fee; }
+
+        .info-card .card-text {
+            flex: 1;
+        }
+
+        .info-card .card-text strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        /* Don't collect list */
+        .dont-list {
+            list-style: none;
+            margin: 16px 0;
+            padding: 0;
+        }
+
+        .dont-list li {
+            font-size: 16px;
+            color: #444;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            line-height: 1.5;
+        }
+
+        .dont-list li:last-child {
+            border-bottom: none;
+        }
+
+        .dont-list .check {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: #eefef3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ---- FOOTER ---- */
         footer {
-            padding: 48px 0;
+            padding: 40px 24px;
             text-align: center;
-            border-top: 1px solid #e5e5e5;
+            background: #fff;
+            border-top: 1px solid #eee;
         }
 
         footer p {
@@ -107,6 +241,8 @@
 
         footer a {
             color: #999;
+            text-decoration: none;
+            transition: color 0.2s;
         }
 
         footer a:hover {
@@ -118,92 +254,192 @@
         }
 
         .footer-links a {
-            margin: 0 12px;
+            margin: 0 16px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* ---- MOBILE ---- */
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 20px;
+            }
+
+            .nav-links a {
+                margin-left: 20px;
+                font-size: 14px;
+            }
+
+            .page-header {
+                padding: 120px 20px 48px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .content {
+                padding: 48px 20px 80px;
+            }
+
+            .section h2 {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo"><a href="/">eKitchen</a></div>
+
+    <!-- Nav -->
+    <nav>
+        <a href="/" class="nav-logo">eKitchen</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="mailto:support@ekitchen-app.com">Contact</a>
         </div>
-    </header>
+    </nav>
 
-    <div class="content">
-        <div class="container">
-            <h1>Privacy Policy</h1>
-            <p class="last-updated">Last updated: April 13, 2026</p>
-
-            <p>eKitchen ("we", "our", "the app") is built and operated by Ramiz Arif. This policy explains what data we collect, why we collect it, and how we handle it.</p>
-
-            <p>The short version: we collect what we need to make the app work for you. We don't sell your data. We don't show you ads.</p>
-
-            <h2>What we collect</h2>
-
-            <p><strong>Account information:</strong> When you create an account, we collect your email address and password. Authentication is handled through Google Firebase. We use your email to log you in and to contact you about your account if needed.</p>
-
-            <p><strong>Content you create:</strong> Recipes you save or create, kitchen inventory, shopping lists, cooking history, ratings, and tips. This is the core of what eKitchen does, and we store it so your data is available across sessions.</p>
-
-            <p><strong>Usage data:</strong> We may collect anonymous usage analytics (such as which features are used and how often) to understand how the app is being used and to improve it. This data is aggregated and cannot be used to identify you personally.</p>
-
-            <h2>What we don't collect</h2>
-
-            <ul>
-                <li>We don't collect your location</li>
-                <li>We don't access your contacts, photos, or camera (unless you choose to upload a photo)</li>
-                <li>We don't track you across other apps or websites</li>
-            </ul>
-
-            <h2>How we use your data</h2>
-
-            <p>Your data is used to provide and improve the eKitchen experience. Specifically:</p>
-
-            <ul>
-                <li>To let you save recipes, track your kitchen, and build shopping lists</li>
-                <li>To recommend recipes based on your kitchen inventory and cooking history</li>
-                <li>To improve the app based on aggregated, anonymous usage patterns</li>
-            </ul>
-
-            <h2>Third-party services</h2>
-
-            <p>We use the following third-party services:</p>
-
-            <ul>
-                <li><strong>Google Firebase:</strong> For account authentication. Firebase receives your email and password for login purposes. See <a href="https://firebase.google.com/support/privacy">Firebase's privacy policy</a>.</li>
-            </ul>
-
-            <p>We may add analytics tools in the future to better understand how the app is used. If we do, we will update this policy and the data will remain anonymous and aggregated.</p>
-
-            <h2>Data sharing</h2>
-
-            <p>We do not sell, rent, or share your personal data with third parties for marketing or advertising purposes. Period.</p>
-
-            <p>We may share data only if required by law or to protect the safety of our users.</p>
-
-            <h2>Data storage and security</h2>
-
-            <p>Your data is stored on secure servers. We use industry-standard practices to protect your information, including encrypted connections (HTTPS) and secure authentication through Firebase.</p>
-
-            <h2>Account deletion</h2>
-
-            <p>You can delete your account and all associated data from within the app. If you need help, contact us at <a href="mailto:support@ekitchen.com">support@ekitchen.com</a> and we'll take care of it.</p>
-
-            <h2>Children's privacy</h2>
-
-            <p>eKitchen is not intended for children under 13. We do not knowingly collect data from children under 13. If you believe a child has provided us with personal data, please contact us and we will delete it.</p>
-
-            <h2>Changes to this policy</h2>
-
-            <p>We may update this privacy policy from time to time. If we make significant changes, we'll notify you through the app or by email. The "last updated" date at the top of this page reflects the most recent revision.</p>
-
-            <h2>Contact</h2>
-
-            <p>If you have questions about this privacy policy or your data, reach out at <a href="mailto:support@ekitchen.com">support@ekitchen.com</a>.</p>
+    <!-- Header -->
+    <div class="page-header">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: April 13, 2026</p>
+        <div class="tldr">
+            The short version: we collect what we need to make the app work for you. We don't sell your data. We don't show you ads.
         </div>
     </div>
 
+    <!-- Content -->
+    <div class="content">
+
+        <div class="section">
+            <h2>What we collect</h2>
+
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="card-icon blue">
+                        <svg width="16" height="16" fill="none" stroke="#3a8ee8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <div class="card-text">
+                        <strong>Account information</strong>
+                        When you create an account, we collect your email address and password. Authentication is handled through Google Firebase. We use your email to log you in and to contact you about your account if needed.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon orange">
+                        <svg width="16" height="16" fill="none" stroke="#e85d3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    </div>
+                    <div class="card-text">
+                        <strong>Content you create</strong>
+                        Recipes you save or create, kitchen inventory, shopping lists, cooking history, ratings, and tips. This is the core of what eKitchen does, and we store it so your data is available across sessions.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-icon green">
+                        <svg width="16" height="16" fill="none" stroke="#3aaa6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="card-text">
+                        <strong>Usage data</strong>
+                        We may collect anonymous usage analytics (such as which features are used and how often) to understand how the app is being used and to improve it. This data is aggregated and cannot be used to identify you personally.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>What we don't collect</h2>
+
+            <ul class="dont-list">
+                <li>
+                    <span class="check">
+                        <svg width="14" height="14" fill="none" stroke="#3aaa6a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    We don't collect your location
+                </li>
+                <li>
+                    <span class="check">
+                        <svg width="14" height="14" fill="none" stroke="#3aaa6a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    We don't access your contacts, photos, or camera (unless you choose to upload a photo)
+                </li>
+                <li>
+                    <span class="check">
+                        <svg width="14" height="14" fill="none" stroke="#3aaa6a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    We don't track you across other apps or websites
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>How we use your data</h2>
+            <p>Your data is used to provide and improve the eKitchen experience. Specifically:</p>
+
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="card-icon orange">
+                        <svg width="16" height="16" fill="none" stroke="#e85d3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="M3 9V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4"/></svg>
+                    </div>
+                    <div class="card-text">To let you save recipes, track your kitchen, and build shopping lists</div>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon blue">
+                        <svg width="16" height="16" fill="none" stroke="#3a8ee8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                    <div class="card-text">To recommend recipes based on your kitchen inventory and cooking history</div>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon green">
+                        <svg width="16" height="16" fill="none" stroke="#3aaa6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="card-text">To improve the app based on aggregated, anonymous usage patterns</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Third-party services</h2>
+            <p><strong>Google Firebase</strong> handles account authentication. Firebase receives your email and password for login purposes. See <a href="https://firebase.google.com/support/privacy">Firebase's privacy policy</a>.</p>
+            <p>We may add analytics tools in the future to better understand how the app is used. If we do, we will update this policy and the data will remain anonymous and aggregated.</p>
+        </div>
+
+        <div class="section">
+            <h2>Data sharing</h2>
+            <p>We do not sell, rent, or share your personal data with third parties for marketing or advertising purposes. Period.</p>
+            <p>We may share data only if required by law or to protect the safety of our users.</p>
+        </div>
+
+        <div class="section">
+            <h2>Data storage and security</h2>
+            <p>Your data is stored on secure servers. We use industry-standard practices to protect your information, including encrypted connections (HTTPS) and secure authentication through Firebase.</p>
+        </div>
+
+        <div class="section">
+            <h2>Account deletion</h2>
+            <p>You can delete your account and all associated data from within the app. If you need help, contact us at <a href="mailto:support@ekitchen-app.com">support@ekitchen-app.com</a> and we'll take care of it.</p>
+        </div>
+
+        <div class="section">
+            <h2>Children's privacy</h2>
+            <p>eKitchen is not intended for children under 13. We do not knowingly collect data from children under 13. If you believe a child has provided us with personal data, please contact us and we will delete it.</p>
+        </div>
+
+        <div class="section">
+            <h2>Changes to this policy</h2>
+            <p>We may update this privacy policy from time to time. If we make significant changes, we'll notify you through the app or by email. The "last updated" date at the top of this page reflects the most recent revision.</p>
+        </div>
+
+        <div class="section">
+            <h2>Contact</h2>
+            <p>If you have questions about this privacy policy or your data, reach out at <a href="mailto:support@ekitchen-app.com">support@ekitchen-app.com</a>.</p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <div class="container">
+        <div>
             <div class="footer-links">
                 <a href="/">Home</a>
                 <a href="/privacy">Privacy Policy</a>
@@ -211,5 +447,6 @@
             <p>&copy; 2026 eKitchen. All rights reserved.</p>
         </div>
     </footer>
+
 </body>
 </html>
