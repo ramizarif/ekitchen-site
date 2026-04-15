@@ -537,11 +537,11 @@
         <div class="section-container">
             <h2>Get early access</h2>
             <p>Be the first to know when eKitchen hits the App Store.</p>
-            <form class="signup-form" action="https://docs.google.com/forms/d/e/FORM_ID/formResponse" method="POST" target="_blank">
-                <input type="email" name="entry.EMAIL_FIELD" placeholder="your@email.com" required>
-                <button type="submit">Notify me</button>
+            <form class="signup-form" id="waitlist-form">
+                <input type="email" id="waitlist-email" placeholder="your@email.com" required>
+                <button type="submit" id="waitlist-btn">Notify me</button>
             </form>
-            <p class="signup-note">No spam. Just a launch day email.</p>
+            <p class="signup-note" id="signup-note">No spam. Just a launch day email.</p>
         </div>
     </section>
 
@@ -569,6 +569,52 @@
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
             nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Waitlist signup
+        document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('waitlist-email').value;
+            const btn = document.getElementById('waitlist-btn');
+            const note = document.getElementById('signup-note');
+
+            btn.textContent = 'Joining...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('https://ekitchen-production.up.railway.app/waitlist/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email }),
+                });
+
+                if (res.ok) {
+                    btn.textContent = 'You\'re in!';
+                    btn.style.background = '#2a9d5c';
+                    note.textContent = 'Check your email for a welcome message.';
+                    note.style.color = 'rgba(255,255,255,0.6)';
+                    document.getElementById('waitlist-email').disabled = true;
+                } else {
+                    const data = await res.json().catch(() => null);
+                    const msg = data?.error?.message || 'Something went wrong';
+                    if (msg.toLowerCase().includes('already')) {
+                        btn.textContent = 'Already signed up!';
+                        btn.style.background = '#2a9d5c';
+                        note.textContent = 'You\'re already on the waitlist.';
+                        note.style.color = 'rgba(255,255,255,0.6)';
+                    } else {
+                        btn.textContent = 'Try again';
+                        btn.disabled = false;
+                        note.textContent = msg;
+                        note.style.color = '#e85d3a';
+                    }
+                }
+            } catch (err) {
+                btn.textContent = 'Try again';
+                btn.disabled = false;
+                note.textContent = 'Could not connect. Please try again.';
+                note.style.color = '#e85d3a';
+            }
         });
     </script>
 </body>
