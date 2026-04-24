@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - eKitchen</title>
+    <meta name="description" content="eKitchen terms of service. The rules for using the app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a1a;
+            background: #fff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ---- NAV ---- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #e85d3a;
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            margin-left: 32px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #e85d3a;
+        }
+
+        /* ---- HEADER ---- */
+        .page-header {
+            padding: 140px 24px 60px;
+            background: #f8f8f8;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 12px;
+        }
+
+        .page-header .last-updated {
+            font-size: 15px;
+            color: #999;
+        }
+
+        .page-header .tldr {
+            max-width: 520px;
+            margin: 24px auto 0;
+            padding: 20px 24px;
+            background: #fff;
+            border-radius: 14px;
+            font-size: 16px;
+            color: #555;
+            line-height: 1.65;
+        }
+
+        /* ---- CONTENT ---- */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px 100px;
+        }
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section h2 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.4px;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section p {
+            font-size: 16px;
+            color: #444;
+            margin-bottom: 14px;
+            line-height: 1.75;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section strong {
+            color: #1a1a1a;
+        }
+
+        .section a {
+            color: #e85d3a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Card-style lists */
+        .info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .info-card {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 18px 22px;
+            font-size: 16px;
+            color: #444;
+            line-height: 1.65;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .info-card .card-icon {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-top: 2px;
+        }
+
+        .info-card .card-icon.green { background: #eefef3; }
+        .info-card .card-icon.blue { background: #eef3fe; }
+        .info-card .card-icon.orange { background: #fef3ee; }
+        .info-card .card-icon.red { background: #fee; }
+
+        .info-card .card-text {
+            flex: 1;
+        }
+
+        .info-card .card-text strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        /* Don't collect list */
+        .dont-list {
+            list-style: none;
+            margin: 16px 0;
+            padding: 0;
+        }
+
+        .dont-list li {
+            font-size: 16px;
+            color: #444;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            line-height: 1.5;
+        }
+
+        .dont-list li:last-child {
+            border-bottom: none;
+        }
+
+        .dont-list .check {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: #eefef3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ---- FOOTER ---- */
+        footer {
+            padding: 40px 24px;
+            text-align: center;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            font-size: 14px;
+            color: #999;
+        }
+
+        footer a {
+            color: #999;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #e85d3a;
+        }
+
+        .footer-links {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            margin: 0 16px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* ---- MOBILE ---- */
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 20px;
+            }
+
+            .nav-links a {
+                margin-left: 20px;
+                font-size: 14px;
+            }
+
+            .page-header {
+                padding: 120px 20px 48px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .content {
+                padding: 48px 20px 80px;
+            }
+
+            .section h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav>
+        <a href="/" class="nav-logo">eKitchen</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="mailto:support@ekitchen-app.com">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="page-header">
+        <h1>Terms of Service</h1>
+        <p class="last-updated">Last updated: April 23, 2026</p>
+        <div class="tldr">
+            The short version: be respectful, don't break the rules, and use the app as intended. We reserve the right to remove content that violates these terms.
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+        <div class="section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By creating an account, downloading, or using eKitchen (the "App"), you agree to be bound by these Terms of Service ("Terms") and our Privacy Policy. If you do not agree with any part of these Terms, you may not use the App. Your continued use of the App following any changes to these Terms constitutes your acceptance of the updated Terms.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. Who We Are</h2>
+            <p>eKitchen is operated by Ramiz Arif (solo developer, d/b/a eKitchen). <!-- TODO(legal): confirm legal entity name with user --> You can contact us with questions, feedback, or concerns at <a href="mailto:support@ekitchen-app.com">support@ekitchen-app.com</a>.</p>
+        </div>
+
+        <div class="section">
+            <h2>3. Account Registration and Responsibility</h2>
+            <p>You must be at least 13 years old to use eKitchen. If you are a parent or guardian of a child under 13 who has created an account, please contact us immediately so we can remove their data.</p>
+            <p>You are responsible for maintaining the confidentiality of your account credentials, including your email and password. You agree not to share your password with anyone else. You are fully responsible for all activity that occurs under your account. If you suspect unauthorized access or misuse of your account, notify us immediately at <a href="mailto:support@ekitchen-app.com">support@ekitchen-app.com</a>.</p>
+        </div>
+
+        <div class="section">
+            <h2>4. User Content and Ownership</h2>
+            <p>You retain full ownership and responsibility for all content you submit to eKitchen, including recipe tips, photos, and user-created recipes (collectively, "User Content"). By submitting User Content, you grant eKitchen a worldwide, royalty-free, non-exclusive, perpetual license to host, display, distribute, and promote your content within the App and for marketing purposes.</p>
+            <p>You represent and warrant that you own or have the right to grant these rights to any User Content you submit, and that your content does not infringe the intellectual property, privacy, or other rights of any third party.</p>
+        </div>
+
+        <div class="section">
+            <h2>5. Acceptable Use Policy</h2>
+            <p>You agree not to post, submit, or share any content that:</p>
+            <ul class="dont-list">
+                <li><span class="check"><svg width="14" height="14" fill="none" stroke="#e85d3a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Is unlawful, harassing, defamatory, hateful, or abusive</li>
+                <li><span class="check"><svg width="14" height="14" fill="none" stroke="#e85d3a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Is sexually explicit or obscene</li>
+                <li><span class="check"><svg width="14" height="14" fill="none" stroke="#e85d3a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Constitutes spam, scams, phishing, or deceptive content</li>
+                <li><span class="check"><svg width="14" height="14" fill="none" stroke="#e85d3a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Infringes intellectual property rights, trademarks, or copyrights</li>
+                <li><span class="check"><svg width="14" height="14" fill="none" stroke="#e85d3a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Contains instructions that are unsafe, dangerous, or encourage harm</li>
+                <li><span class="check"><svg width="14" height="14" fill="none" stroke="#e85d3a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Shares personal information about others without consent</li>
+            </ul>
+            <p>We reserve the right to remove any content that violates these rules, suspend or terminate your account, and take other action as we deem appropriate, in our sole discretion.</p>
+        </div>
+
+        <div class="section">
+            <h2>6. Reporting and Blocking Content</h2>
+            <p>If you encounter content that violates these Terms, you can report it using the in-app Report feature. Simply tap the kebab menu (three dots) on the content and select Report. Describe the issue and submit. We review all reports within 24 hours and will act on violations according to these Terms.</p>
+            <p>You can also block other users to stop seeing their tips, photos, and recipes. Once you block a user, their content will no longer appear in your feeds. You can unblock users at any time through your settings, though this feature is not currently visible in the app interface.</p>
+        </div>
+
+        <div class="section">
+            <h2>7. Recipe Information Disclaimer</h2>
+            <p><strong>Important:</strong> All recipes and cooking instructions on eKitchen are provided for informational purposes only. Always verify ingredients for allergens and potential reactions specific to you. Check internal food temperatures against official food-safety guidelines before serving. Use your own judgment and common sense when preparing any recipe.</p>
+            <p>eKitchen is not responsible for and disclaims liability for any adverse outcomes from following a recipe or cooking instruction on the App, including but not limited to allergic reactions, foodborne illness, injuries, burns, or damage to your kitchen. The App does not provide medical or dietary advice. If you have allergies, dietary restrictions, or health concerns, consult a doctor or nutritionist before preparing any recipe.</p>
+        </div>
+
+        <div class="section">
+            <h2>8. Our Role as a Platform</h2>
+            <p>eKitchen is a platform that hosts recipes, tips, photos, and other content contributed by users or curated from third-party sources. While we work to maintain a safe and respectful community, we do not guarantee the accuracy, completeness, nutritional content, or safety of any particular recipe or content on the App. Users are responsible for verifying the accuracy of content they use.</p>
+            <p>eKitchen may offer AI-assisted features such as recipe rewrites or enhancements. These features are provided as-is and may contain errors, omissions, or inaccuracies. Always verify AI-generated content before use, especially for food safety, allergen information, and cooking instructions.</p>
+        </div>
+
+        <div class="section">
+            <h2>9. Account Termination</h2>
+            <p>We may suspend or terminate your account at any time, with or without cause, if we believe you have violated these Terms or engaged in conduct that we deem harmful to the eKitchen community. Upon termination, your right to use the App ceases immediately.</p>
+            <p>You can delete your own account at any time from the App settings (Settings > Delete Account). Account deletion will permanently remove your data from eKitchen's servers in accordance with our Privacy Policy. We may retain certain data as required by law or for legitimate business purposes (such as fraud prevention or legal compliance).</p>
+        </div>
+
+        <div class="section">
+            <h2>10. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law, eKitchen is provided "AS IS" without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement. We do not warrant that the App will be uninterrupted, error-free, secure, or free from viruses or other harmful components.</p>
+            <p>In no event shall eKitchen be liable for any indirect, incidental, special, consequential, punitive, or exemplary damages (including but not limited to loss of profits, data, or use) arising out of or in connection with your use of the App, even if we have been advised of the possibility of such damages.</p>
+        </div>
+
+        <div class="section">
+            <h2>11. Copyright and DMCA Notices</h2>
+            <p>If you believe that content on eKitchen infringes your copyright or intellectual property rights, please contact us with the following information:</p>
+            <p>(a) A description of the copyrighted work or intellectual property that you claim has been infringed;<br>(b) The location on eKitchen where the infringing content appears (include the recipe title, tip text, or photo);<br>(c) Your full name, mailing address, phone number, and email address;<br>(d) A statement that you have a good-faith belief that the use of the content is unauthorized by the copyright owner, its agent, or the law; and<br>(e) A statement under penalty of perjury that the information you've provided is accurate.</p>
+            <p>Send your notice to <a href="mailto:support@ekitchen-app.com">support@ekitchen-app.com</a>. We will investigate and respond promptly.</p>
+        </div>
+
+        <div class="section">
+            <h2>12. Changes to These Terms</h2>
+            <p>We may update these Terms from time to time to reflect changes in our practices, technology, legal requirements, or other factors. If we make material changes to these Terms, we will notify you through the App or by email. Your continued use of eKitchen after such changes constitutes your acceptance of the updated Terms. We encourage you to review these Terms periodically.</p>
+        </div>
+
+        <div class="section">
+            <h2>13. Governing Law and Jurisdiction</h2>
+            <p>These Terms of Service are governed by and construed in accordance with the laws of the State of California, United States, <!-- TODO(legal): confirm governing-law jurisdiction with user --> without regard to its conflict-of-laws principles. You agree that any legal action or proceeding shall be exclusively resolved in the courts located in California.</p>
+        </div>
+
+        <div class="section">
+            <h2>Contact Us</h2>
+            <p>If you have questions about these Terms of Service, or if you wish to report a violation, contact us at <a href="mailto:support@ekitchen-app.com">support@ekitchen-app.com</a>. We aim to respond to all inquiries within 24 hours.</p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+            <p>&copy; 2026 eKitchen. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
